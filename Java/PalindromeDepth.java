@@ -29,10 +29,11 @@ public class PalindromeDepth {
      */
     public static int reverseNumber(int inputNumber) {
         int reversedNumber = 0;
-        while (inputNumber > 0) {
-            int digit = inputNumber % 10;          // Extract the last digit
+        int number = inputNumber; // Copy inputNumber to avoid modifying it
+        while (number > 0) {
+            int digit = number % 10;          // Extract the last digit
             reversedNumber = reversedNumber * 10 + digit; // Append it to the reversed number
-            inputNumber = inputNumber / 10;        // Remove the last digit from the original number
+            number = number / 10;        // Remove the last digit from the original number
         }
         return reversedNumber;
     }
