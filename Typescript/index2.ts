@@ -20,7 +20,7 @@ function reverseNumber(inputNumber: number): number {
     // Append it to the reversed number
     reversedNumber = reversedNumber * 10 + digit
     // Remove the last digit from the original number
-    inputNumber = Math.floor(number / 10)
+    inputNumber = Math.floor(inputNumber / 10)
   }
   return reversedNumber
 }
