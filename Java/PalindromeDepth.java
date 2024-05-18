@@ -16,26 +16,25 @@ public class PalindromeDepth {
     // Reverse the digits of a number
     public static int reverseNumber(int inputNumber) {
         int reversedNumber = 0;
-        int number = inputNumber; // Store the inputNumber in a temporary variable
+        int number = inputNumber;
         while (number > 0) {
             int digit = number % 10;          // Extract the last digit
             reversedNumber = reversedNumber * 10 + digit; // Append it to the reversed number
-            number = number / 10;        // Remove the last digit from the temporary variable
+            number = number / 10;        // Remove the last digit from the original number
         }
         return reversedNumber;
     }
 
     // Find the depth of a number to become a palindrome
-    public static int findDepth(int number, int currentDepth) {
-        if (isPalindrome(number)) {
+    public static int findDepth(int inputNumber, int currentDepth) {
+        if (isPalindrome(inputNumber)) {
             return currentDepth;
         } else {
-            int reversedNumber = reverseNumber(number);
-            int sum = number + reversedNumber;
+            int reversedNumber = reverseNumber(inputNumber);
+            int sum = inputNumber + reversedNumber;
             return findDepth(sum, currentDepth + 1);
         }
     }
-
     public static void main(String[] args) {
         int startInt = 10;
         int finishInt = 99;
