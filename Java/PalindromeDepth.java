@@ -16,11 +16,11 @@ public class PalindromeDepth {
     // Reverse the digits of a number
     public static int reverseNumber(int inputNumber) {
         int reversedNumber = 0;
-        int number = inputNumber;
+        int number = inputNumber; // Store the inputNumber in a temporary variable
         while (number > 0) {
             int digit = number % 10;          // Extract the last digit
             reversedNumber = reversedNumber * 10 + digit; // Append it to the reversed number
-            number = number / 10;        // Remove the last digit from the original number
+            number = number / 10;        // Remove the last digit from the temporary variable
         }
         return reversedNumber;
     }
