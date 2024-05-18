@@ -27,7 +27,7 @@ const finishInt: number = 99
 
 for (let counter = startInt; counter <= finishInt; counter++) {
   let intDepth: number = findDepth(counter, 0)
-  console.log(`${counter} is a depth ${intDepth} palindrome.`)
+  console.log(`Number: ${counter}, Depth: ${intDepth}`)
 }
 
 console.log("\nDone.")
