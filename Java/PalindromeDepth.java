@@ -7,41 +7,55 @@
  */
 
 public class PalindromeDepth {
+    
+    // Private constructor to prevent instantiation
+    private PalindromeDepth() {
+        throw new IllegalStateException("Cannot be instantiated");
+    }
+    
+    /**
+     * This function calculates the palindrome depth of a number.
+     * 
+     * @param integer The input number for which palindrome depth is to be calculated.
+     * @param currentDepth The current depth of recursion.
+     * @return The depth of the palindrome.
+     */
+    public static int palindromeDepth(long integer, int currentDepth) {
+        // Reverse the integer
+        long reversedInteger = reverseInteger(integer);
 
-    // Check if a number is a palindrome
-    public static boolean isPalindrome(int inputNumber) {
-        return inputNumber == reverseNumber(inputNumber);
+        // Check if integer is a palindrome
+        if (integer == reversedInteger) {
+            return currentDepth;
+        } else {
+            long sum = integer + reversedInteger;
+            return palindromeDepth(sum, currentDepth + 1);
+        }
     }
 
-    // Reverse the digits of a number
-    public static int reverseNumber(int inputNumber) {
-        int reversedNumber = 0;
-        int number = inputNumber;
-        while (number > 0) {
-            int digit = number % 10;          // Extract the last digit
+    /**
+     * This function reverses an integer.
+     * 
+     * @param number The integer to be reversed.
+     * @return The reversed integer.
+     */
+    public static long reverseInteger(long number) {
+        long reversedNumber = 0;
+        while (number != 0) {
+            long digit = number % 10; // Extract the last digit
             reversedNumber = reversedNumber * 10 + digit; // Append it to the reversed number
-            number = number / 10;        // Remove the last digit from the original number
+            number /= 10; // Remove the last digit
         }
         return reversedNumber;
     }
 
-    // Find the depth of a number to become a palindrome
-    public static int findDepth(int inputNumber, int currentDepth) {
-        if (isPalindrome(inputNumber)) {
-            return currentDepth;
-        } else {
-            int reversedNumber = reverseNumber(inputNumber);
-            int sum = inputNumber + reversedNumber;
-            return findDepth(sum, currentDepth + 1);
-        }
-    }
     public static void main(String[] args) {
         int startInt = 10;
         int finishInt = 99;
 
         for (int counter = startInt; counter <= finishInt; counter++) {
-            int intDepth = findDepth(counter, 0);
-            System.out.println("Number: " + counter + ", Depth: " + intDepth);
+            int intDepth = palindromeDepth(counter, 0);
+            System.out.println(counter + " is a depth " + intDepth + " palindrome.");
         }
 
         System.out.println("\nDone.");
