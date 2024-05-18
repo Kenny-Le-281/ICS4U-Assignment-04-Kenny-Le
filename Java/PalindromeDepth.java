@@ -20,15 +20,15 @@ public class PalindromeDepth {
      * @param currentDepth The current depth of recursion.
      * @return The depth of the palindrome.
      */
-    public static int palindromeDepth(long integer, int currentDepth) {
+    public static int palindromeDepth(int integer, int currentDepth) {
         // Reverse the integer
-        long reversedInteger = reverseInteger(integer);
+        int reversedInteger = reverseInteger(integer);
 
         // Check if integer is a palindrome
         if (integer == reversedInteger) {
             return currentDepth;
         } else {
-            long sum = integer + reversedInteger;
+            int sum = integer + reversedInteger;
             return palindromeDepth(sum, currentDepth + 1);
         }
     }
@@ -39,10 +39,10 @@ public class PalindromeDepth {
      * @param number The integer to be reversed.
      * @return The reversed integer.
      */
-    public static long reverseInteger(long number) {
-        long reversedNumber = 0;
+    public static int reverseInteger(int number) {
+        int reversedNumber = 0;
         while (number != 0) {
-            long digit = number % 10; // Extract the last digit
+            int digit = number % 10; // Extract the last digit
             reversedNumber = reversedNumber * 10 + digit; // Append it to the reversed number
             number /= 10; // Remove the last digit
         }
