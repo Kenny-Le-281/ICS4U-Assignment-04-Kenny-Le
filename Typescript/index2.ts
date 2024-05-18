@@ -31,7 +31,7 @@ function findDepth(inputNumber: number, currentDepth: number = 0): number {
     return currentDepth
   } else {
     const reversedNumber = reverseNumber(inputNumber);
-    const sum = number + reversedNumber
+    const sum = inputNumber + reversedNumber
     return findDepth(sum, currentDepth + 1)
   }
 }
