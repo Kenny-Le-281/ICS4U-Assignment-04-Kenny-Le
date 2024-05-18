@@ -8,7 +8,7 @@
 
 // This is the is Palindrome function
 function isPalindrome(inputNumber: number): boolean {
-  const reversed = reverseNumber(inputNumber);
+  const reversed = reverseNumber(inputNumber)
   if (inputNumber === reversed) {
     return true
   } else {
@@ -36,7 +36,7 @@ function findDepth(inputNumber: number, currentDepth: number = 0): number {
   if (isPalindrome(inputNumber)) {
     return currentDepth
   } else {
-    const reversedNumber = reverseNumber(inputNumber);
+    const reversedNumber = reverseNumber(inputNumber)
     const sum = inputNumber + reversedNumber
     return findDepth(sum, currentDepth + 1)
   }
