@@ -8,8 +8,14 @@
 
 // This is the is Palindrome function
 function isPalindrome(inputNumber: number): boolean {
-  return inputNumber === reverseNumber(inputNumber)
+  const reversed = reverseNumber(inputNumber);
+  if (inputNumber === reversed) {
+    return true
+  } else {
+    return false
+  }
 }
+
 
 // This is the reverseNumber function
 function reverseNumber(inputNumber: number): number {
