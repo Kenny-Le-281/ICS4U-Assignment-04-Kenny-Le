@@ -6,30 +6,17 @@
  * @since   2024-05-17
  */
 
-/**
- * A class to calculate the palindrome depth of numbers.
- */
 public class PalindromeDepth {
 
-    /**
-     * Checks if a number is a palindrome.
-     *
-     * @param inputNumber The number to check.
-     * @return True if the number is a palindrome, otherwise false.
-     */
+    // Check if a number is a palindrome
     public static boolean isPalindrome(int inputNumber) {
         return inputNumber == reverseNumber(inputNumber);
     }
 
-    /**
-     * Reverses the digits of a number.
-     *
-     * @param inputNumber The number to reverse.
-     * @return The reversed number.
-     */
+    // Reverse the digits of a number
     public static int reverseNumber(int inputNumber) {
         int reversedNumber = 0;
-        int number = inputNumber; // Copy inputNumber to avoid modifying it
+        int number = inputNumber;
         while (number > 0) {
             int digit = number % 10;          // Extract the last digit
             reversedNumber = reversedNumber * 10 + digit; // Append it to the reversed number
@@ -38,13 +25,7 @@ public class PalindromeDepth {
         return reversedNumber;
     }
 
-    /**
-     * Finds the depth of a number to become a palindrome.
-     *
-     * @param number       The number to check.
-     * @param currentDepth The current depth of recursion.
-     * @return The depth of the palindrome.
-     */
+    // Find the depth of a number to become a palindrome
     public static int findDepth(int number, int currentDepth) {
         if (isPalindrome(number)) {
             return currentDepth;
@@ -55,11 +36,6 @@ public class PalindromeDepth {
         }
     }
 
-    /**
-     * Main method to calculate and print palindrome depths for numbers from 10 to 99.
-     *
-     * @param args The command line arguments (unused).
-     */
     public static void main(String[] args) {
         int startInt = 10;
         int finishInt = 99;
