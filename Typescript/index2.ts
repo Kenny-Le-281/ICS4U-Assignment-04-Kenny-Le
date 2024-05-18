@@ -1,27 +1,42 @@
-function isPalindrome(number: number): boolean {
-  return number === reverseNumber(number);
+/*
+ * This is the Palindrome program
+ *
+ * @author  Kenny Le
+ * @version 1.0
+ * @since   2024-05-17
+ */
+
+// This is the is Palindrome function
+function isPalindrome(inputNumber: number): boolean {
+  return inputNumber === reverseNumber(inputNumber)
 }
 
-function reverseNumber(number: number): number {
-  let reversedNumber = 0;
-  while (number > 0) {
-    const digit = number % 10;       // Extract the last digit
-    reversedNumber = reversedNumber * 10 + digit; // Append it to the reversed number
-    number = Math.floor(number / 10);   // Remove the last digit from the original number
+// This is the reverseNumber function
+function reverseNumber(inputNumber: number): number {
+  let reversedNumber = 0
+  while (inputNumber > 0) {
+    // Extract the last digit
+    const digit = inputNumber % 10
+    // Append it to the reversed number
+    reversedNumber = reversedNumber * 10 + digit
+    // Remove the last digit from the original number
+    inputNumber = Math.floor(number / 10)
   }
-  return reversedNumber;
+  return reversedNumber
 }
 
-function findDepth(number: number, currentDepth: number = 0): number {
-  if (isPalindrome(number)) {
-    return currentDepth;
+// This is the findDepth function
+function findDepth(inputNumber: number, currentDepth: number = 0): number {
+  if (isPalindrome(inputNumber)) {
+    return currentDepth
   } else {
-    const reversedNumber = reverseNumber(number);
-    const sum = number + reversedNumber;
-    return findDepth(sum, currentDepth + 1);
+    const reversedNumber = reverseNumber(inputNumber);
+    const sum = number + reversedNumber
+    return findDepth(sum, currentDepth + 1)
   }
 }
 
+// Loops through all the two-digit numbers to see if they are a palindrome
 const startInt: number = 10
 const finishInt: number = 99
 
