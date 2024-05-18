@@ -13,9 +13,8 @@ public class PalindromeDepth {
         throw new IllegalStateException("Cannot be instantiated");
     }
     
-    // Since long is 64-bit, it offers a larger range of integers whcih is needed for this program.
-    // This is why long is used instea of standared integer.
-
+    // Since long is 64-bit, it offers a larger range of integers which is needed for this program.
+    // This is why long is used instead of standard integers.
     /**
      * This function calculates the palindrome depth of a number.
      * 
